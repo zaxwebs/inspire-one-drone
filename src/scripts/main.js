@@ -1,6 +1,7 @@
 import $ from 'jquery'
 import 'bootstrap'
 import Rellax from 'rellax'
+import VirtualScroll from 'virtual-scroll'
 
 const drone = new Rellax('#drone', {
 	speed: 4,
@@ -28,3 +29,5 @@ const cloud = new Rellax('#cloud', {
 	vertical: true,
 	horizontal: false
 })
+
+new VirtualScroll()
