@@ -1,4 +1,6 @@
 @import url('https://rsms.me/inter/inter.css');
+
+// BASE
 html {
 	font-family: 'Inter', sans-serif;
 }
@@ -8,7 +10,10 @@ html {
 	}
 }
 
-// BASE
+body {
+	overflow: scroll;
+	-webkit-overflow-scrolling: touch;
+}
 
 // UTILS
 @mixin bg-cover($path: false) {
