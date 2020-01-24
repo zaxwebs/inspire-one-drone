@@ -1,3 +1,13 @@
+@import url('https://rsms.me/inter/inter.css');
+html {
+	font-family: 'Inter', sans-serif;
+}
+@supports (font-variation-settings: normal) {
+	html {
+		font-family: 'Inter var', sans-serif;
+	}
+}
+
 // BASE
 
 // UTILS
@@ -15,8 +25,10 @@
 
 // PAGE(s)
 #cover {
+	color: white;
 	position: relative;
 	min-height: 400px;
+	background-color: #0c5f3d;
 	@include bg-cover('../images/scene.jpg');
 
 	@include media-breakpoint-up(md) {
@@ -32,15 +44,51 @@
 		z-index: 1;
 	}
 
+	.overflow-wrapper {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		overflow: hidden;
+
+		#cloud {
+			position: absolute;
+			width: 80%;
+			left: 20px;
+			bottom: -20%;
+			z-index: 3;
+			@include media-breakpoint-up(md) {
+				width: 50%;
+				left: 40%;
+				bottom: -40%;
+			}
+		}
+	}
+
 	#drone {
 		min-width: 380px;
 		position: absolute;
 		width: 50%;
 		right: 10px;
 		bottom: -20%;
-		z-index: 2;
+		z-index: 3;
 		@include media-breakpoint-up(md) {
 			right: 10%;
+		}
+	}
+
+	#tagline {
+		z-index: 2;
+		position: absolute;
+		top: 30%;
+		left: 10px;
+		max-width: 500px;
+		font-weight: bold;
+		text-shadow: 0 0 10px rgba(#000000, 0.1);
+
+		@include media-breakpoint-up(md) {
+			top: 25%;
+			left: 20%;
+			font-size: 6em;
 		}
 	}
 }
